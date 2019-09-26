@@ -44,13 +44,13 @@ void rasterizeArc(int radius) {
 	int d = 1-radius;
 	 //Draw Start Pixels
 	renderPixel(x,y);
-    renderPixel(y,x);
+    	renderPixel(y,x);
 
 	//Select E point: dnew = d + 2*x + 3;
 	//Select SE point: dnew = d + 2*(x-y) + 5;
 	//x,y chosen from previous points
 
-	//if d >= 0 implies circle is passing below M and towards the SE point
+	//if d >= 0 point is outside the circle, compute SE point
 	//if d < 0, point is inside the circle, compute E point
     while(y > x)
 	{
@@ -67,7 +67,7 @@ void rasterizeArc(int radius) {
 		}
 	//Plot mid points 
 	renderPixel(x,y);
-    renderPixel(y,x);
+    	renderPixel(y,x);
 	} 
 
 
